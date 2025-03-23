@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply font-inter text-gray-800 dark:text-gray-200 bg-light-bg dark:bg-dark-bg 
+    transition-colors duration-200 ease-in-out m-0 p-0 min-h-screen w-full;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins font-bold;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl;
+  }
+  
+  .section {
+    @apply py-20;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-12 text-center;
+  }
+  
+  .subsection-title {
+    @apply text-2xl font-semibold mb-6;
+  }
+  
+  .btn {
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-300 inline-flex items-center justify-center;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white shadow-md hover:shadow-lg;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border-2 border-primary-600 text-primary-600 hover:bg-primary-50 dark:hover:bg-primary-900/20;
+  }
+  
+  .card {
+    @apply bg-light-card dark:bg-dark-card rounded-xl shadow-md hover:shadow-lg transition-all duration-300;
+  }
+}
+
+/* Remove conflicting styles that affect centering */
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+/* Updated body styles to fix centering */
+body {
+  margin: 0;
+  /* Remove display: flex which causes centering issues */
+  min-width: 320px;
+  min-height: 100vh;
+  text-align: left; /* Ensure text aligns properly */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* Modern Futuristic Splash Screen */
+.futuristic-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.name-logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 500;
+  font-size: clamp(2rem, 5vw, 4rem);
+  letter-spacing: 0.3em;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  position: relative;
+  margin-right: -0.3em; /* Compensate for letter spacing */
+}
+
+.logo-dot {
+  position: absolute;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #0ea5e9; /* primary-600 */
+  border-radius: 50%;
+  bottom: 0;
+  right: -12px;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.name-logo::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #0ea5e9, transparent);
+  animation: lineReveal 1.5s ease-in-out forwards;
+  opacity: 0.8;
+}
+
+@keyframes lineReveal {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.7;
+  }
+}
+
+/* Splash Screen Glitch Effect */
+.glitch-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch-splash {
+  position: relative;
+  font-family: 'Orbitron', sans-serif;
+  color: #ffffff;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.glitch-splash::before,
+.glitch-splash::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
+
+.glitch-splash::before {
+  color: #ff00ff; /* pink */
+  z-index: -1;
+  clip: rect(44px, 450px, 56px, 0);
+  transform: skew(0.5deg);
+  animation: glitch-splash-1 5s linear infinite alternate-reverse;
+  text-shadow: -2px 0 #ff00ff;
+}
+
+.glitch-splash::after {
+  color: #00f0ff; /* neon blue */
+  z-index: -2;
+  clip: rect(44px, 450px, 56px, 0);
+  transform: skew(-0.5deg);
+  animation: glitch-splash-2 5s linear infinite alternate-reverse;
+  text-shadow: 2px 0 #00f0ff;
+}
+
+@keyframes glitch-splash-1 {
+  0% {
+    clip: rect(80px, 9999px, 84px, 0);
+  }
+  10% {
+    clip: rect(36px, 9999px, 44px, 0);
+  }
+  20% {
+    clip: rect(63px, 9999px, 15px, 0);
+  }
+  30% {
+    clip: rect(19px, 9999px, 98px, 0);
+  }
+  40% {
+    clip: rect(85px, 9999px, 11px, 0);
+  }
+  50% {
+    clip: rect(18px, 9999px, 83px, 0);
+  }
+  60% {
+    clip: rect(89px, 9999px, 32px, 0);
+  }
+  70% {
+    clip: rect(2px, 9999px, 60px, 0);
+  }
+  80% {
+    clip: rect(91px, 9999px, 52px, 0);
+  }
+  90% {
+    clip: rect(28px, 9999px, 73px, 0);
+  }
+  100% {
+    clip: rect(14px, 9999px, 56px, 0);
+  }
+}
+
+@keyframes glitch-splash-2 {
+  0% {
+    clip: rect(65px, 9999px, 32px, 0);
+  }
+  10% {
+    clip: rect(7px, 9999px, 93px, 0);
+  }
+  20% {
+    clip: rect(37px, 9999px, 11px, 0);
+  }
+  30% {
+    clip: rect(90px, 9999px, 31px, 0);
+  }
+  40% {
+    clip: rect(44px, 9999px, 93px, 0);
+  }
+  50% {
+    clip: rect(1px, 9999px, 28px, 0);
+  }
+  60% {
+    clip: rect(11px, 9999px, 43px, 0);
+  }
+  70% {
+    clip: rect(84px, 9999px, 72px, 0);
+  }
+  80% {
+    clip: rect(24px, 9999px, 87px, 0);
+  }
+  90% {
+    clip: rect(56px, 9999px, 17px, 0);
+  }
+  100% {
+    clip: rect(79px, 9999px, 45px, 0);
+  }
+}
+
+/* Floating animation for testimonials */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
