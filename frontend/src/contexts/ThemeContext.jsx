@@ -3,13 +3,28 @@ import { createContext, useContext, useEffect, useState } from "react";
 const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
+  // Enhanced theme detection with fallback to system preference
   const [darkMode, setDarkMode] = useState(() => {
     const savedTheme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-    return savedTheme ? savedTheme === "dark" : prefersDark;
+    if (savedTheme) {
+      return savedTheme === "dark";
+    }
+    // If no saved preference, check system preference
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
   });
+
+  // Listen for system theme changes
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const handleChange = (e) => {
+      if (!localStorage.getItem("theme")) {
+        setDarkMode(e.matches);
+      }
+    };
+
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
 
   useEffect(() => {
     if (darkMode) {

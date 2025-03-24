@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTheme } from "@contexts/ThemeContext";
 
 const SplashScreen = () => {
   const [isVisible, setIsVisible] = useState(true);
+  const { darkMode } = useTheme();
 
   useEffect(() => {
     // Show splash screen for exactly 2 seconds, then fade out
@@ -20,7 +22,9 @@ const SplashScreen = () => {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="fixed inset-0 flex items-center justify-center bg-dark-bg z-[100]"
+          className={`fixed inset-0 flex items-center justify-center z-[100] ${
+            darkMode ? "bg-dark-bg" : "bg-blue-50"
+          }`}
           style={{ pointerEvents: "all" }}
         >
           <motion.div
@@ -36,7 +40,7 @@ const SplashScreen = () => {
               },
             }}
           >
-            <h1 className="name-logo">
+            <h1 className={`name-logo ${!darkMode && "text-gray-800"}`}>
               ISHARA
               <span className="logo-dot"></span>
             </h1>

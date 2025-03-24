@@ -26,22 +26,41 @@ export default {
           bg: "#121212",
           card: "#1e1e1e",
           accent: "#2d2d2d",
+          text: "#f3f4f6",
+          muted: "#9ca3af",
         },
         light: {
           bg: "#f9fafb",
           card: "#ffffff",
           accent: "#f3f4f6",
+          text: "#111827",
+          muted: "#6b7280",
         },
       },
       animation: {
         "bounce-slow": "bounce 3s infinite",
         "fade-in": "fadeIn 0.5s ease-in-out",
+        "theme-fade": "themeFade 0.5s ease-in-out",
       },
       keyframes: {
         fadeIn: {
           "0%": { opacity: 0 },
           "100%": { opacity: 1 },
         },
+        themeFade: {
+          "0%": { opacity: 0.7 },
+          "100%": { opacity: 1 },
+        },
+      },
+      transitionProperty: {
+        theme:
+          "color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter",
+      },
+      transitionDuration: {
+        400: "400ms",
+      },
+      transitionTimingFunction: {
+        theme: "cubic-bezier(0.4, 0, 0.2, 1)",
       },
     },
   },

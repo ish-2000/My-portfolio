@@ -33,6 +33,38 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Enhanced theme toggle button with animation
+  const ThemeToggleButton = () => (
+    <motion.button
+      onClick={toggleTheme}
+      className={`p-2 rounded-full bg-light-accent dark:bg-dark-accent hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors relative overflow-hidden`}
+      whileTap={{ scale: 0.95 }}
+      aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+    >
+      <motion.div
+        initial={false}
+        animate={{ rotate: darkMode ? 0 : 180 }}
+        transition={{ duration: 0.4, ease: "easeInOut" }}
+        className="relative z-10"
+      >
+        {darkMode ? (
+          <FaMoon className="text-yellow-400" />
+        ) : (
+          <FaSun className="text-indigo-600" />
+        )}
+      </motion.div>
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-br from-yellow-300 to-yellow-100 dark:from-indigo-600 dark:to-blue-900 opacity-20 dark:opacity-30"
+        initial={false}
+        animate={{
+          opacity: darkMode ? 0.3 : 0.2,
+          scale: darkMode ? 1 : 0.8,
+        }}
+        transition={{ duration: 0.4 }}
+      />
+    </motion.button>
+  );
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -75,36 +107,12 @@ const Navbar = () => {
             ))}
           </ul>
 
-          <button
-            onClick={toggleTheme}
-            className="p-2 rounded-full bg-light-accent dark:bg-dark-accent hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-            aria-label={
-              darkMode ? "Switch to light mode" : "Switch to dark mode"
-            }
-          >
-            {darkMode ? (
-              <FaSun className="text-yellow-400" />
-            ) : (
-              <FaMoon className="text-indigo-600" />
-            )}
-          </button>
+          <ThemeToggleButton />
         </div>
 
         {/* Mobile Menu Button */}
         <div className="flex items-center gap-4 md:hidden">
-          <button
-            onClick={toggleTheme}
-            className="p-2 rounded-full bg-light-accent dark:bg-dark-accent"
-            aria-label={
-              darkMode ? "Switch to light mode" : "Switch to dark mode"
-            }
-          >
-            {darkMode ? (
-              <FaSun className="text-yellow-400" />
-            ) : (
-              <FaMoon className="text-indigo-600" />
-            )}
-          </button>
+          <ThemeToggleButton />
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

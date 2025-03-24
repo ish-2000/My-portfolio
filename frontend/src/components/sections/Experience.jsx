@@ -35,19 +35,19 @@ const Experience = () => {
   const education = [
     {
       id: 1,
-      degree: "Master of Computer Science",
-      institution: "University of Technology",
-      duration: "2015 - 2017",
+      degree: "G.C.E. Ordinary & Advanced Level",
+      institution: "Poramadulla Central College",
+      duration: "2013 - 2022",
       description:
-        "Specialized in web technologies and software engineering. Thesis on performance optimization in single-page applications.",
+        "Completed both Ordinary Level and Advanced Level studies with a strong academic foundation. Actively engaged in science and technology subjects, laying the groundwork for my journey into IT and software development.",
     },
     {
       id: 2,
-      degree: "Bachelor of Computer Science",
-      institution: "State University",
-      duration: "2011 - 2015",
+      degree: "BSc (Hons) in Information Technology (Specializing in IT)",
+      institution: "Sri lanka institute of information technology",
+      duration: "2023 - Present",
       description:
-        "Graduated with honors. Coursework included data structures, algorithms, database systems, and web development.",
+        "Undergraduate student in Information Technology, actively building knowledge in data structures, algorithms, database systems, and full-stack web development through hands-on projects and academic coursework.",
     },
   ];
 

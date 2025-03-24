@@ -8,75 +8,95 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
+      title: "FarmCart - Digital Marketplace",
       description:
-        "A full-featured e-commerce platform with cart, checkout, and payment processing.",
-      image: "/project1.jpg",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-      demoLink: "https://project1-demo.com",
-      githubLink: "https://github.com/yourusername/project1",
+        "A digital marketplace connecting farmers directly with consumers, featuring a shopping cart, secure checkout, and payment processing.",
+      image:
+        "https://res.cloudinary.com/dgvdlyxhw/image/upload/v1742846527/Schilderijkoning_-_Canvas_Schilderij_Een_Doos_Groenten_-_40_x_30_cm_yiqz2b.jpg",
+      technologies: ["React", "Node.js", "MongoDB", "Express.js", "Stripe"],
+      demoLink: "https://farmcart-demo.com",
+      githubLink: "https://github.com/yourusername/farmcart",
       details:
-        "This e-commerce platform features user authentication, product search/filtering, shopping cart functionality, secure payment processing, and an admin dashboard for inventory management. Built with a React frontend and Node.js backend, it uses MongoDB for data storage and Stripe for payments.",
+        "FarmCart enables direct farm-to-consumer sales with features like product browsing, shopping cart management, secure payments via PayHere, order tracking with real-time updates using Socket.io, and an admin dashboard for farmers to manage products and orders. Built with a React frontend and a Node.js/Express backend, utilizing MongoDB for scalable data storage.",
+    },
+    {
+      id: 1,
+      title: "Royal Lodge Hotel Booking System",
+      description:
+        "A complete hotel booking platform with real-time availability, secure payments, and admin control.",
+      image:
+        "https://res.cloudinary.com/dgvdlyxhw/image/upload/v1739010702/the-anam-_twiIcIsp2s-unsplash_eyafvn_c_crop_w_1536_h_864_hbinht.jpg",
+      technologies: [
+        "React.js",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Bootstrap",
+        "Stripe",
+      ],
+      demoLink: "",
+      githubLink: "",
+      details:
+        "Royal Lodge is a modern hotel reservation system that allows users to browse rooms, make bookings, and process payments securely using Stripe. Admins can manage rooms, view all bookings, and handle cancellations. The app features responsive design, animated UI components, PDF report downloads, and advanced booking tracking. The MERN stack ensures smooth performance with MongoDB for data storage and JWT-based authentication for secure user management.",
     },
     {
       id: 2,
-      title: "Task Management App",
+      title: "Hello Coffee - Android Ordering App",
       description:
-        "A productivity app for task management with real-time updates.",
-      image: "/project2.jpg",
-      technologies: ["React", "Firebase", "Tailwind CSS"],
-      demoLink: "https://project2-demo.com",
-      githubLink: "https://github.com/yourusername/project2",
+        "A modern coffee ordering app with real-time tracking and a smooth Kotlin-powered experience.",
+      image:
+        "https://res.cloudinary.com/dgvdlyxhw/image/upload/v1742847396/Download_Close-up_of_a_laptop_and_coffee_for_free_yvbqji.jpg",
+      technologies: ["Kotlin", "Android Studio", "XML", "Firebase", "MVVM"],
+      demoLink: "",
+      githubLink: "",
       details:
-        "This task management application helps users organize their work with features like task creation, due dates, priority levels, and status tracking. The app includes collaborative features allowing teams to assign tasks and communicate. Built with React and Firebase for real-time updates and authentication.",
+        "Hello Coffee is an Android application built using Kotlin in Android Studio, designed to deliver a seamless and interactive coffee ordering experience. Users can browse a variety of coffee types, customize their drinks, and track their orders in real-time. The app features a clean, intuitive UI with responsive design, following MVVM architecture and Firebase backend integration. Emphasizing both functionality and aesthetics, Hello Coffee makes ordering your favorite brew convenient, engaging, and delightful.",
     },
     {
       id: 3,
-      title: "Financial Dashboard",
+      title: "FitPulse - Fitness & Health Tracker App",
       description:
-        "A comprehensive financial dashboard for expense tracking and budgeting.",
-      image: "/project3.jpg",
-      technologies: ["Next.js", "TypeScript", "Chart.js", "PostgreSQL"],
-      demoLink: "https://project3-demo.com",
-      githubLink: "https://github.com/yourusername/project3",
+        "A powerful health & fitness app for tracking workouts, monitoring progress, and staying motivated.",
+      image:
+        "https://res.cloudinary.com/dgvdlyxhw/image/upload/v1742847901/7_exercises_to_increase_running_speed_according_to_a_former_sprint_champion_cr1omg.jpg",
+      technologies: ["Kotlin", "Android Studio", "Firebase", "MVVM", "XML"],
+      demoLink: "",
+      githubLink: "https://github.com/kushanxyz/fitpulse",
       details:
-        "This financial dashboard provides users with tools to track expenses, monitor income, and set budgeting goals. Features include transaction categorization, monthly reports, and visual data representation through interactive charts. Built with Next.js and TypeScript, it uses PostgreSQL for reliable data storage.",
+        "FitPulse is a complete fitness and health management mobile app built using Kotlin in Android Studio. It helps users stay committed to their fitness goals by offering real-time workout tracking, health monitoring, personalized workout plans, and visual progress analytics. With a clean and engaging user interface, the app integrates Firebase for real-time data handling and offers push notifications for workout reminders. FitPulse is designed to be a reliable companion for anyone serious about their fitness journey.",
     },
     {
-      id: 4,
-      title: "Social Media Platform",
+      id: 2,
+      title: "Clothing Brand E-Commerce Website",
       description:
-        "A social networking platform with real-time messaging and content sharing.",
-      image: "/project4.jpg",
-      technologies: ["React", "Socket.io", "Express", "MongoDB"],
-      demoLink: "https://project4-demo.com",
-      githubLink: "https://github.com/yourusername/project4",
+        "A full-featured online store for a fashion brand with dynamic product listings, cart management, and a smooth checkout experience.",
+      image:
+        "https://res.cloudinary.com/dgvdlyxhw/image/upload/v1742848832/Screenshot_20250325_020927_umzxvh.png", // Replace with your actual image path
+      technologies: [
+        "React.js",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Tailwind CSS",
+        "JWT",
+      ],
+      demoLink: "https://clothing-brand-demo.vercel.app", // Replace with your actual deployed link
+      githubLink: "https://github.com/kushanxyz/clothing-brand", // Replace with your actual repo
       details:
-        "This social platform enables users to create profiles, connect with friends, share content, and engage in real-time messaging. Features include post creation with media support, likes and comments, and personalized feeds. Built with React and Socket.io for real-time functionality.",
+        "This e-commerce platform is built for a modern clothing brand, allowing users to explore products, add them to a cart, and complete purchases with a user-friendly interface. Admins can manage inventory, update product info, and track orders. The platform uses the MERN stack for scalability, Tailwind CSS for responsive design, and JWT for secure user authentication. Features include product filtering, order summaries, customer profiles, and clean, minimal UI styling.",
     },
     {
-      id: 5,
-      title: "Travel Blog",
+      id: 3,
+      title: "FitPulse - Fitness & Health Tracker App",
       description:
-        "A content-focused travel blog with rich media support and location mapping.",
-      image: "/project5.jpg",
-      technologies: ["Gatsby.js", "GraphQL", "Netlify CMS", "Mapbox"],
-      demoLink: "https://project5-demo.com",
-      githubLink: "https://github.com/yourusername/project5",
+        "A powerful health & fitness app for tracking workouts, monitoring progress, and staying motivated.",
+      image:
+        "https://res.cloudinary.com/dgvdlyxhw/image/upload/v1742847901/7_exercises_to_increase_running_speed_according_to_a_former_sprint_champion_cr1omg.jpg",
+      technologies: ["Kotlin", "Android Studio", "Firebase", "MVVM", "XML"],
+      demoLink: "",
+      githubLink: "https://github.com/kushanxyz/fitpulse",
       details:
-        "This travel blog showcases destinations with rich media content including photos and videos. Features include location mapping, travel tips, and itinerary planning tools. Built with Gatsby.js for performance, it uses GraphQL for data querying and Netlify CMS for content management.",
-    },
-    {
-      id: 6,
-      title: "Fitness Tracker",
-      description:
-        "A health and fitness application for workout tracking and progress visualization.",
-      image: "/project6.jpg",
-      technologies: ["React Native", "Redux", "Express", "MongoDB"],
-      demoLink: "https://project6-demo.com",
-      githubLink: "https://github.com/yourusername/project6",
-      details:
-        "This fitness tracker helps users monitor workouts, track nutrition, and visualize progress over time. Features include custom workout creation, goal setting, achievement badges, and detailed analytics. Built with React Native for cross-platform compatibility and Express backend for API services.",
+        "FitPulse is a complete fitness and health management mobile app built using Kotlin in Android Studio. It helps users stay committed to their fitness goals by offering real-time workout tracking, health monitoring, personalized workout plans, and visual progress analytics. With a clean and engaging user interface, the app integrates Firebase for real-time data handling and offers push notifications for workout reminders. FitPulse is designed to be a reliable companion for anyone serious about their fitness journey.",
     },
   ];
 

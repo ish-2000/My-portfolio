@@ -10,8 +10,12 @@ import Testimonials from "./components/sections/Testimonials";
 import Contact from "./components/sections/Contact";
 import Footer from "./components/layout/Footer";
 import SplashScreen from "./components/ui/SplashScreen";
+import ScrollToTop from "./components/ui/ScrollToTop";
+import { useTheme } from "./contexts/ThemeContext";
 
 function App() {
+  const { darkMode } = useTheme();
+
   // Add scroll reveal functionality
   useEffect(() => {
     const handleScroll = () => {
@@ -43,7 +47,11 @@ function App() {
 
       {/* Main Content */}
       <AnimatePresence mode="wait">
-        <div className="min-h-screen bg-light-bg dark:bg-dark-bg transition-colors duration-300">
+        <div
+          className={`min-h-screen bg-light-bg dark:bg-dark-bg transition-all duration-300 ease-theme ${
+            darkMode ? "dark-theme" : "light-theme"
+          }`}
+        >
           <Navbar />
           <main>
             <Hero />
@@ -55,6 +63,7 @@ function App() {
             <Contact />
           </main>
           <Footer />
+          <ScrollToTop />
         </div>
       </AnimatePresence>
     </>
