@@ -212,11 +212,13 @@ const Hero = () => {
                   });
                 }}
                 className={`px-4 py-2 text-sm rounded font-medium transition-all duration-300 inline-flex items-center 
-      ${
-        darkMode
-          ? "border border-blue-500 text-blue-400 hover:bg-blue-600 hover:text-white"
-          : "border border-blue-500 text-blue-500 hover:bg-blue-50 hover:border-blue-600 hover:text-blue-600"
-      }`}
+                  ${
+                    darkMode
+                      ? "bg-transparent border border-blue-500 text-blue-400 hover:bg-blue-600 hover:text-white"
+                      : "bg-white text-blue-500 border border-blue-500 hover:bg-blue-50 hover:text-blue-600 hover:border-blue-600"
+                  }
+                  
+                  `}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
