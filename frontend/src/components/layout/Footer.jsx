@@ -56,7 +56,7 @@ const Footer = () => {
 
         <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-800 text-center">
           <p className="text-gray-600 dark:text-gray-400 text-sm">
-            © 2025 Your ishara. All rights reserved.
+            © 2025 Ishara. All rights reserved.
           </p>
         </div>
       </div>

@@ -11,6 +11,7 @@ import Contact from "./components/sections/Contact";
 import Footer from "./components/layout/Footer";
 import SplashScreen from "./components/ui/SplashScreen";
 import ScrollToTop from "./components/ui/ScrollToTop";
+import TestSection from "./components/sections/TestSection"; // Import the new section
 import { useTheme } from "./contexts/ThemeContext";
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
           <Navbar />
           <main>
             <Hero />
+            <TestSection /> {/* Moved to appear right after Hero */}
             <About />
             <Skills />
             <Projects />
