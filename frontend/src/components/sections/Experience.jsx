@@ -54,7 +54,7 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="section bg-light-bg dark:bg-dark-bg reveal"
+      className="section bg-gradient-to-br from-gray-900 to-blue-950/30 reveal py-12 md:py-20 relative"
     >
       <div className="container-custom">
         <motion.h2
@@ -91,7 +91,7 @@ const Experience = () => {
                   className="relative pl-8 border-l-2 border-primary-200 dark:border-primary-900/30"
                 >
                   <div className="absolute left-[-9px] top-0 h-4 w-4 rounded-full bg-primary-600"></div>
-                  <div className="card p-5">
+                  <div className="p-5 rounded-xl bg-gradient-to-r from-primary-50 to-blue-50 dark:from-primary-900/20 dark:to-blue-900/20">
                     <div className="flex flex-wrap justify-between mb-2">
                       <h4 className="text-xl font-semibold">{job.title}</h4>
                       <div className="flex items-center text-gray-600 dark:text-gray-400 text-sm">
@@ -144,7 +144,7 @@ const Experience = () => {
                   className="relative pl-8 border-l-2 border-primary-200 dark:border-primary-900/30"
                 >
                   <div className="absolute left-[-9px] top-0 h-4 w-4 rounded-full bg-primary-600"></div>
-                  <div className="card p-5">
+                  <div className="p-5 rounded-xl bg-gradient-to-r from-primary-50 to-blue-50 dark:from-primary-900/20 dark:to-blue-900/20">
                     <div className="flex flex-wrap justify-between mb-2">
                       <h4 className="text-xl font-semibold">{edu.degree}</h4>
                       <div className="flex items-center text-gray-600 dark:text-gray-400 text-sm">

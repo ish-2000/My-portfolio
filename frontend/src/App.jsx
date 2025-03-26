@@ -12,6 +12,7 @@ import Footer from "./components/layout/Footer";
 import SplashScreen from "./components/ui/SplashScreen";
 import ScrollToTop from "./components/ui/ScrollToTop";
 import TestSection from "./components/sections/TestSection"; // Import the new section
+import FloatingTech from "./components/sections/FloatingTech";
 import { useTheme } from "./contexts/ThemeContext";
 
 function App() {
@@ -56,11 +57,12 @@ function App() {
           <Navbar />
           <main>
             <Hero />
-            <TestSection /> {/* Moved to appear right after Hero */}
+            <TestSection />
             <About />
-            <Skills />
-            <Projects />
             <Experience />
+            <Projects />
+            <FloatingTech />
+
             <Testimonials />
             <Contact />
           </main>

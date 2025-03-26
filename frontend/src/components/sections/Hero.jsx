@@ -244,7 +244,7 @@ const Hero = () => {
             className="cursor-pointer flex flex-col items-center"
           >
             <span className="text-gray-500 dark:text-gray-400 text-sm mb-2">
-              Scroll Down
+              Scroll Down To Explore
             </span>
             <FiArrowDown className="animate-bounce text-blue-500" size={24} />
           </Link>

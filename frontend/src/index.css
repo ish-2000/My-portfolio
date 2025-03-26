@@ -335,3 +335,32 @@ button:focus-visible {
     linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
 }
+
+/* Icon floating and glow effects */
+@keyframes gentle-float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-4px) translateX(2px);
+  }
+  50% {
+    transform: translateY(-8px) translateX(0);
+  }
+  75% {
+    transform: translateY(-4px) translateX(-2px);
+  }
+}
+
+.icon-glow {
+  filter: drop-shadow(0 0 3px rgba(59, 130, 246, 0.5));
+  transition: filter 0.3s ease;
+}
+
+.dark .icon-glow {
+  filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.7));
+}
+
+.bg-size-200 {
+  background-size: 200% 100%;
+}

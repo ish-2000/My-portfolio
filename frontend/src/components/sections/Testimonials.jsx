@@ -32,7 +32,7 @@ const Testimonials = () => {
       image: "/testimonial3.jpg",
       quote:
         "They took our vague idea and turned it into a beautiful, functional product. Their technical expertise created an application our users love.",
-      rating: 5,
+      rating: 4,
     },
     {
       id: 4,
@@ -60,7 +60,7 @@ const Testimonials = () => {
       image: "/testimonial2.jpg",
       quote:
         "Working with them was a game-changer for our project. They provided valuable insights that improved the overall user experience.",
-      rating: 5,
+      rating: 4,
     },
   ];
 
@@ -100,9 +100,9 @@ const Testimonials = () => {
 
           {/* Infinite floating animation container */}
           <motion.div
-            className="flex gap-6 py-8"
+            className="flex gap-3 py-2"
             animate={{
-              x: ["0%", "-16.67%", "0%"],
+              x: ["0%", "16.67%", "0%"], // move right
             }}
             transition={{
               x: {
@@ -116,7 +116,7 @@ const Testimonials = () => {
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={testimonial.id}
-                className="flex-shrink-0 w-[350px] p-6 rounded-xl bg-white/80 dark:bg-gray-800/60 backdrop-blur-sm shadow-md hover:shadow-xl border border-blue-100 dark:border-blue-900/30 transition-all duration-300"
+                className="flex-shrink-0 w-[350px] p-2.5 rounded-xl bg-white/80 dark:bg-gray-800/60 backdrop-blur-sm shadow-md hover:shadow-xl border border-blue-100 dark:border-blue-900/30 transition-all duration-300"
                 whileHover={{
                   scale: 1.05,
                   boxShadow:
@@ -164,7 +164,78 @@ const Testimonials = () => {
 
                 <div className="flex">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <FaStar key={i} className="text-primary-500 mr-1" />
+                    <FaStar key={i} className="text-yellow-400 mr-1" />
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+          <motion.div
+            className="flex gap-3 py-2 mt-4"
+            animate={{
+              x: ["0%", "-16.67%", "0%"],
+            }}
+            transition={{
+              x: {
+                duration: 25,
+                ease: "easeInOut",
+                repeat: Infinity,
+                repeatType: "reverse",
+              },
+            }}
+          >
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={testimonial.id}
+                className="flex-shrink-0 w-[350px] p-2.5 rounded-xl bg-white/80 dark:bg-gray-800/60 backdrop-blur-sm shadow-md hover:shadow-xl border border-blue-100 dark:border-blue-900/30 transition-all duration-300 "
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow:
+                    "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                  backdropFilter: "blur(12px)",
+                  transition: { duration: 0.3 },
+                }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                style={{
+                  // Subtle up and down animation for each card
+                  animation: `float ${
+                    3 + index * 0.3
+                  }s ease-in-out infinite alternate`,
+                }}
+              >
+                <div className="flex items-center mb-4">
+                  <div className="relative mr-4">
+                    <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-blue-100 dark:border-blue-900/30 shadow-md">
+                      <img
+                        src={testimonial.image}
+                        alt={`${testimonial.name} profile`}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="absolute -bottom-1 -right-1 p-1 bg-white dark:bg-gray-800 rounded-full shadow-sm">
+                      <FaQuoteLeft className="text-primary-500 text-sm" />
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="font-medium text-gray-900 dark:text-white">
+                      {testimonial.name}
+                    </h3>
+                    <p className="text-primary-600 dark:text-primary-400 text-sm">
+                      {testimonial.position}
+                    </p>
+                  </div>
+                </div>
+
+                <p className="text-gray-700 dark:text-gray-300 mb-4 italic leading-relaxed text-sm">
+                  "{testimonial.quote}"
+                </p>
+
+                <div className="flex">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <FaStar key={i} className="text-yellow-400 mr-1" />
                   ))}
                 </div>
               </motion.div>

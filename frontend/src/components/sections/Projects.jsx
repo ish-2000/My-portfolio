@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { FiExternalLink, FiGithub, FiX } from "react-icons/fi";
+import { FiExternalLink, FiGithub, FiX, FiInfo } from "react-icons/fi";
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -25,7 +25,7 @@ const Projects = () => {
       description:
         "A complete hotel booking platform with real-time availability, secure payments, and admin control.",
       image:
-        "https://res.cloudinary.com/dgvdlyxhw/image/upload/v1739010702/the-anam-_twiIcIsp2s-unsplash_eyafvn_c_crop_w_1536_h_864_hbinht.jpg",
+        "https://res.cloudinary.com/dgvdlyxhw/image/upload/v1742972006/Screenshot_20250225_173611_zj2tl2.png",
       technologies: [
         "React.js",
         "Node.js",
@@ -58,7 +58,7 @@ const Projects = () => {
       description:
         "A powerful health & fitness app for tracking workouts, monitoring progress, and staying motivated.",
       image:
-        "https://res.cloudinary.com/dgvdlyxhw/image/upload/v1742847901/7_exercises_to_increase_running_speed_according_to_a_former_sprint_champion_cr1omg.jpg",
+        "https://res.cloudinary.com/dgvdlyxhw/image/upload/v1742976975/%EF%B8%8F__%EF%B8%8F_Fitness_Training_App_UI_eg17un.jpg",
       technologies: ["Kotlin", "Android Studio", "Firebase", "MVVM", "XML"],
       demoLink: "",
       githubLink: "https://github.com/kushanxyz/fitpulse",
@@ -86,26 +86,53 @@ const Projects = () => {
         "This e-commerce platform is built for a modern clothing brand, allowing users to explore products, add them to a cart, and complete purchases with a user-friendly interface. Admins can manage inventory, update product info, and track orders. The platform uses the MERN stack for scalability, Tailwind CSS for responsive design, and JWT for secure user authentication. Features include product filtering, order summaries, customer profiles, and clean, minimal UI styling.",
     },
     {
-      id: 3,
-      title: "FitPulse - Fitness & Health Tracker App",
+      id: 4,
+      title: "Online Vehicle Spare Parts System",
       description:
-        "A powerful health & fitness app for tracking workouts, monitoring progress, and staying motivated.",
+        "A complete platform for browsing, ordering, and managing vehicle spare parts online with secure admin and user panels.",
       image:
-        "https://res.cloudinary.com/dgvdlyxhw/image/upload/v1742847901/7_exercises_to_increase_running_speed_according_to_a_former_sprint_champion_cr1omg.jpg",
-      technologies: ["Kotlin", "Android Studio", "Firebase", "MVVM", "XML"],
-      demoLink: "",
-      githubLink: "https://github.com/kushanxyz/fitpulse",
+        "https://res.cloudinary.com/dgvdlyxhw/image/upload/v1742976146/Top_Car_Website_Templates_for_Auto_Enthusiasts_-_EntheosWeb_yi9m9j.jpg", // Replace with your actual image URL
+      technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript", "Bootstrap"],
+      demoLink: "", // Add if hosted
+      githubLink: "https://github.com/kushanxyz/vehicle-spare-parts-system",
       details:
-        "FitPulse is a complete fitness and health management mobile app built using Kotlin in Android Studio. It helps users stay committed to their fitness goals by offering real-time workout tracking, health monitoring, personalized workout plans, and visual progress analytics. With a clean and engaging user interface, the app integrates Firebase for real-time data handling and offers push notifications for workout reminders. FitPulse is designed to be a reliable companion for anyone serious about their fitness journey.",
+        "The Online Vehicle Spare Parts System is a web-based application designed to streamline the purchase and management of automobile spare parts. Built using PHP and MySQL, it features separate panels for customers and administrators. Users can browse available parts, view product details, and place orders easily. The admin panel includes inventory control, order management, and product listing functionality. The system offers a smooth UI/UX, secure database operations, and efficient order processing for both sellers and buyers in the auto parts market.",
     },
   ];
+
+  // Animation variants for card reveal
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+      },
+    },
+  };
 
   return (
     <section
       id="projects"
-      className="section bg-light-accent dark:bg-dark-accent reveal"
+      className="section bg-gradient-to-br from-gray-900 to-blue-950/30 reveal py-12 md:py-20 relative"
     >
-      <div className="container-custom">
+      {/* Subtle top glow to complement the wave from About section */}
+      <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-gray-900/50 to-transparent opacity-60"></div>
+
+      <div className="container-custom relative z-10">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -116,75 +143,130 @@ const Projects = () => {
           Featured Projects
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="card overflow-hidden group"
+              variants={cardVariants}
+              className="relative group overflow-hidden rounded-xl bg-white dark:bg-[#1a1f2b] transition-all duration-300 shadow-md hover:shadow-xl h-full"
             >
-              <div className="h-48 overflow-hidden">
+              {/* Project image with gradient overlay */}
+              <div className="relative h-56 md:h-48 lg:h-52 w-full overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent z-[1]"></div>
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
+
+                {/* Project title overlay - only visible on mobile */}
+                <h3 className="absolute bottom-0 left-0 right-0 text-white text-xl font-bold p-4 z-10 md:hidden">
+                  {project.title}
+                </h3>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-4">
+
+              {/* Project details - hidden on mobile */}
+              <div className="p-5 md:block hidden">
+                <h3 className="text-xl font-bold mb-2 text-gray-800 dark:text-white">
+                  {project.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">
                   {project.description}
                 </p>
+
+                {/* Tech stack tags */}
                 <div className="flex flex-wrap gap-2 mb-5">
-                  {project.technologies.map((tech) => (
+                  {project.technologies.slice(0, 3).map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 text-xs rounded-full"
+                      className="px-2 py-1 bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 text-xs rounded-full"
                     >
                       {tech}
                     </span>
                   ))}
+                  {project.technologies.length > 3 && (
+                    <span className="text-xs text-gray-500 dark:text-gray-400 flex items-center">
+                      +{project.technologies.length - 3} more
+                    </span>
+                  )}
                 </div>
 
-                <div className="flex space-x-3">
+                {/* Action buttons */}
+                <div className="flex items-center justify-between mt-auto">
                   <button
                     onClick={() => setSelectedProject(project)}
-                    className="text-primary-600 font-medium hover:underline focus:outline-none"
+                    className="text-white bg-primary-600 hover:bg-primary-700 px-3 py-1.5 rounded-md text-sm font-medium flex items-center"
                   >
-                    View Details
+                    Details
                   </button>
-                  <div className="flex-grow"></div>
-                  <a
-                    href={project.demoLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                    aria-label="Live Demo"
-                  >
-                    <FiExternalLink size={20} />
-                  </a>
-                  <a
-                    href={project.githubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                    aria-label="GitHub Repository"
-                  >
-                    <FiGithub size={20} />
-                  </a>
+
+                  <div className="flex space-x-3">
+                    {project.demoLink && (
+                      <a
+                        href={project.demoLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                        aria-label="Live Demo"
+                      >
+                        <FiExternalLink size={20} />
+                      </a>
+                    )}
+                    {project.githubLink && (
+                      <a
+                        href={project.githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                        aria-label="GitHub Repository"
+                      >
+                        <FiGithub size={20} />
+                      </a>
+                    )}
+                  </div>
                 </div>
+              </div>
+
+              {/* Mobile view - Click overlay */}
+              <div className="absolute inset-0 md:hidden flex items-center justify-center">
+                <button
+                  onClick={() => setSelectedProject(project)}
+                  className="absolute inset-0 w-full h-full z-20 opacity-0"
+                  aria-label={`View ${project.title} details`}
+                ></button>
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
+
+        {/* View more projects button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+          className="flex justify-center mt-10"
+        >
+          <a
+            href="https://github.com/ish-2000"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-3 bg-primary-600/10 hover:bg-primary-600/20 text-primary-700 dark:text-primary-300 dark:bg-primary-900/20 dark:hover:bg-primary-800/30 rounded-lg transition-colors duration-300 font-medium"
+          >
+            View More Projects &gt;&gt;
+          </a>
+        </motion.div>
       </div>
 
       {/* Project Details Modal */}
       {selectedProject && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -224,23 +306,27 @@ const Projects = () => {
                 {selectedProject.details}
               </p>
 
-              <div className="flex gap-4">
-                <a
-                  href={selectedProject.demoLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-primary"
-                >
-                  <FiExternalLink className="mr-2" /> Live Demo
-                </a>
-                <a
-                  href={selectedProject.githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-secondary"
-                >
-                  <FiGithub className="mr-2" /> View Code
-                </a>
+              <div className="flex gap-4 flex-wrap">
+                {selectedProject.demoLink && (
+                  <a
+                    href={selectedProject.demoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-primary"
+                  >
+                    <FiExternalLink className="mr-2" /> Live Demo
+                  </a>
+                )}
+                {selectedProject.githubLink && (
+                  <a
+                    href={selectedProject.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-secondary"
+                  >
+                    <FiGithub className="mr-2" /> View Code
+                  </a>
+                )}
               </div>
             </div>
           </motion.div>

@@ -42,7 +42,6 @@ const SplashScreen = () => {
           >
             <h1 className={`name-logo ${!darkMode && "text-gray-800"}`}>
               ISHARA
-              <span className="logo-dot"></span>
             </h1>
           </motion.div>
         </motion.div>

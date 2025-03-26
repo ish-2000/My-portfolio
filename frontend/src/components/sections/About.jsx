@@ -29,10 +29,7 @@ const About = () => {
     <section
       id="about"
       ref={sectionRef}
-      className="section relative overflow-hidden reveal py-24 px-6 md:px-16
-        bg-gradient-to-b from-blue-50 via-slate-50 to-white 
-        dark:from-[#0b1120] dark:via-[#0a0e1c] dark:to-black 
-        text-gray-800 dark:text-white"
+      className="section bg-gradient-to-br from-gray-900 to-blue-950/30 reveal py-12 md:py-20 relative"
     >
       {/* Subtle top separator */}
       <div
@@ -210,57 +207,24 @@ const About = () => {
               and methodologies to improve my craft.
             </p>
 
-            <div className="mb-8">
-              <h4 className="font-semibold mb-3 text-gray-800 dark:text-gray-200">
-                Technologies I work with:
-              </h4>
-              <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
-                {techIcons.map((tech, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 0.1 * index }}
-                    viewport={{ once: true }}
-                    whileHover={{
-                      y: -5,
-                      boxShadow: "0 10px 25px -5px rgba(59, 130, 246, 0.3)",
-                      background:
-                        "linear-gradient(to bottom right, rgba(236, 246, 255, 0.8), rgba(224, 242, 254, 0.8))",
-                      dark: {
-                        background:
-                          "linear-gradient(to bottom right, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.8))",
-                      },
-                      borderColor: "rgba(96, 165, 250, 0.3)",
-                    }}
-                    className="flex flex-col items-center p-3 
-                      bg-white/80 backdrop-blur-sm border border-blue-100/60
-                      dark:bg-gray-900/60 dark:border-gray-800/60 
-                      rounded-lg shadow-lg transition-all duration-300"
-                  >
-                    <div className="text-primary-600 dark:text-primary-400 mb-2">
-                      {tech.icon}
-                    </div>
-                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                      {tech.name}
-                    </span>
-                  </motion.div>
-                ))}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+              <div className="p-4 rounded-xl bg-emerald-50 dark:bg-emerald-900/10 text-sm">
+                💡 <span className="font-semibold">Creativity</span> — turning
+                ideas into intuitive digital experiences.
+              </div>
+              <div className="p-4 rounded-xl bg-cyan-50 dark:bg-cyan-900/10 text-sm">
+                🔍 <span className="font-semibold">Detail-Oriented</span> — I
+                care about the little things that make big impacts.
+              </div>
+              <div className="p-4 rounded-xl bg-indigo-50 dark:bg-indigo-900/10 text-sm">
+                🤝 <span className="font-semibold">Team Spirit</span> — I thrive
+                in collaborative environments.
+              </div>
+              <div className="p-4 rounded-xl bg-yellow-50 dark:bg-emerald-900/10 text-sm">
+                📚 <span className="font-semibold">Lifelong Learner</span> — I
+                constantly explore new tools and techniques.
               </div>
             </div>
-
-            <motion.a
-              href="/your-cv.pdf"
-              download
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0 10px 25px -5px rgba(59, 130, 246, 0.4)",
-              }}
-              whileTap={{ scale: 0.98 }}
-              className="btn btn-primary inline-flex items-center bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
-            >
-              <FiDownload className="mr-2" /> Download CV
-            </motion.a>
           </motion.div>
         </div>
       </div>
