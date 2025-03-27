@@ -20,6 +20,11 @@ function App() {
 
   // Add scroll reveal functionality
   useEffect(() => {
+    console.log(
+      "%cHey curious dev! 👋 This site was handcrafted by Ishara",
+      "color: #38bdf8; font-size: 14px; font-family: monospace;"
+    );
+
     const handleScroll = () => {
       const sections = document.querySelectorAll(".reveal");
 

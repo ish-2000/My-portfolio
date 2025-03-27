@@ -57,6 +57,12 @@ const Footer = () => {
         <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-800 text-center">
           <p className="text-gray-600 dark:text-gray-400 text-sm">
             © 2025 Ishara. All rights reserved.
+            <p className="text-xs text-center text-gray-500 dark:text-gray-400 mt-6 italic">
+              Designed & built by{" "}
+              <span className="text-primary-600 font-semibold">
+                Ishara Udaanga
+              </span>
+            </p>
           </p>
         </div>
       </div>

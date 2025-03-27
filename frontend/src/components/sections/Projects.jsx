@@ -12,10 +12,10 @@ const Projects = () => {
       description:
         "A digital marketplace connecting farmers directly with consumers, featuring a shopping cart, secure checkout, and payment processing.",
       image:
-        "https://res.cloudinary.com/dgvdlyxhw/image/upload/v1742846527/Schilderijkoning_-_Canvas_Schilderij_Een_Doos_Groenten_-_40_x_30_cm_yiqz2b.jpg",
+        "https://res.cloudinary.com/dgvdlyxhw/image/upload/v1743090996/Untitled_design_1_ncr6zl.png",
       technologies: ["React", "Node.js", "MongoDB", "Express.js", "Stripe"],
-      demoLink: "https://farmcart-demo.com",
-      githubLink: "https://github.com/yourusername/farmcart",
+      demoLink: "",
+      githubLink: "",
       details:
         "FarmCart enables direct farm-to-consumer sales with features like product browsing, shopping cart management, secure payments via PayHere, order tracking with real-time updates using Socket.io, and an admin dashboard for farmers to manage products and orders. Built with a React frontend and a Node.js/Express backend, utilizing MongoDB for scalable data storage.",
     },
@@ -41,11 +41,11 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "Hello Coffee - Android Ordering App",
+      title: "Hello Coffee - Android Coffee Ordering App",
       description:
         "A modern coffee ordering app with real-time tracking and a smooth Kotlin-powered experience.",
       image:
-        "https://res.cloudinary.com/dgvdlyxhw/image/upload/v1742847396/Download_Close-up_of_a_laptop_and_coffee_for_free_yvbqji.jpg",
+        "https://res.cloudinary.com/dgvdlyxhw/image/upload/v1743100494/Coffee_Shop_Mobile_App_UI_UX_nh1jh5.jpg",
       technologies: ["Kotlin", "Android Studio", "XML", "Firebase", "MVVM"],
       demoLink: "",
       githubLink: "",
@@ -58,10 +58,10 @@ const Projects = () => {
       description:
         "A powerful health & fitness app for tracking workouts, monitoring progress, and staying motivated.",
       image:
-        "https://res.cloudinary.com/dgvdlyxhw/image/upload/v1742976975/%EF%B8%8F__%EF%B8%8F_Fitness_Training_App_UI_eg17un.jpg",
+        "https://i.pinimg.com/736x/1e/60/37/1e6037caf3ff2d1d4ca87aa6e6da5d1e.jpg",
       technologies: ["Kotlin", "Android Studio", "Firebase", "MVVM", "XML"],
       demoLink: "",
-      githubLink: "https://github.com/kushanxyz/fitpulse",
+      githubLink: "",
       details:
         "FitPulse is a complete fitness and health management mobile app built using Kotlin in Android Studio. It helps users stay committed to their fitness goals by offering real-time workout tracking, health monitoring, personalized workout plans, and visual progress analytics. With a clean and engaging user interface, the app integrates Firebase for real-time data handling and offers push notifications for workout reminders. FitPulse is designed to be a reliable companion for anyone serious about their fitness journey.",
     },
@@ -80,23 +80,32 @@ const Projects = () => {
         "Tailwind CSS",
         "JWT",
       ],
-      demoLink: "https://clothing-brand-demo.vercel.app", // Replace with your actual deployed link
-      githubLink: "https://github.com/kushanxyz/clothing-brand", // Replace with your actual repo
+      demoLink: "",
+      githubLink: "",
+
       details:
         "This e-commerce platform is built for a modern clothing brand, allowing users to explore products, add them to a cart, and complete purchases with a user-friendly interface. Admins can manage inventory, update product info, and track orders. The platform uses the MERN stack for scalability, Tailwind CSS for responsive design, and JWT for secure user authentication. Features include product filtering, order summaries, customer profiles, and clean, minimal UI styling.",
     },
     {
       id: 4,
-      title: "Online Vehicle Spare Parts System",
+      title: "MailMind – AI-Powered Email Manager",
       description:
-        "A complete platform for browsing, ordering, and managing vehicle spare parts online with secure admin and user panels.",
+        "An intelligent email management app that categorizes emails, detects urgency, and sends smart reminders via Web Push & WhatsApp.",
       image:
-        "https://res.cloudinary.com/dgvdlyxhw/image/upload/v1742976146/Top_Car_Website_Templates_for_Auto_Enthusiasts_-_EntheosWeb_yi9m9j.jpg", // Replace with your actual image URL
-      technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript", "Bootstrap"],
-      demoLink: "", // Add if hosted
-      githubLink: "https://github.com/kushanxyz/vehicle-spare-parts-system",
+        "https://res.cloudinary.com/dgvdlyxhw/image/upload/v1743093777/Screenshot_20250327_221215_psvb8x.png", // Replace this if you have a real MailMind screenshot
+      technologies: [
+        "React.js",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Firebase",
+        "Resend API",
+        "Tailwind CSS",
+      ],
+      demoLink: "", // Add if deployed
+      githubLink: "", // Add if available
       details:
-        "The Online Vehicle Spare Parts System is a web-based application designed to streamline the purchase and management of automobile spare parts. Built using PHP and MySQL, it features separate panels for customers and administrators. Users can browse available parts, view product details, and place orders easily. The admin panel includes inventory control, order management, and product listing functionality. The system offers a smooth UI/UX, secure database operations, and efficient order processing for both sellers and buyers in the auto parts market.",
+        "MailMind is an AI-powered email manager built with the MERN stack. It categorizes inbox messages, detects urgent emails, and allows users to set smart reminders. Notifications are sent via Web Push and WhatsApp using integrated APIs. Designed for productivity and clean UI/UX, MailMind helps users stay on top of their email flow with modern automation and intelligent insights.",
     },
   ];
 
@@ -162,7 +171,7 @@ const Projects = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                 />
 
                 {/* Project title overlay - only visible on mobile */}
@@ -214,20 +223,7 @@ const Projects = () => {
                         rel="noopener noreferrer"
                         className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                         aria-label="Live Demo"
-                      >
-                        <FiExternalLink size={20} />
-                      </a>
-                    )}
-                    {project.githubLink && (
-                      <a
-                        href={project.githubLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                        aria-label="GitHub Repository"
-                      >
-                        <FiGithub size={20} />
-                      </a>
+                      ></a>
                     )}
                   </div>
                 </div>

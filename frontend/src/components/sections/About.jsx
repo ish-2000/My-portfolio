@@ -190,7 +190,7 @@ const About = () => {
           >
             <h3 className="subsection-title text-gray-800 dark:text-gray-100">
               <span className="text-primary-600 dark:text-primary-500">
-                Full Stack Developer
+                Full Stack Developer , UI UX Designer
               </span>{" "}
               with a passion for creating beautiful, functional websites
             </h3>
