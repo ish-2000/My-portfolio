@@ -16,6 +16,10 @@ const About = () => {
   const rotate1 = useTransform(scrollYProgress, [0, 1], [0, 45]);
   const rotate2 = useTransform(scrollYProgress, [0, 1], [0, -45]);
 
+  const startYear = 2022;
+  const currentYear = new Date().getFullYear();
+  const yearsOfExperience = currentYear - startYear;
+
   const techIcons = [
     { icon: <FaReact size={36} />, name: "React" },
     { icon: <FaNodeJs size={36} />, name: "Node.js" },
@@ -173,7 +177,7 @@ const About = () => {
                 rounded-lg shadow-xl z-20"
               >
                 <p className="font-bold text-primary-600 dark:text-primary-400">
-                  5+ Years
+                  {yearsOfExperience}+ Years
                 </p>
                 <p className="text-sm text-gray-700 dark:text-gray-300">
                   Development Experience
@@ -201,10 +205,10 @@ const About = () => {
               focusing on performance, accessibility, and user experience.
             </p>
             <p className="mb-6 text-gray-700 dark:text-gray-300">
-              My journey in web development started over 5 years ago, and I've
-              worked on various projects ranging from e-commerce platforms to
-              complex web applications. I'm constantly learning new technologies
-              and methodologies to improve my craft.
+              My journey in web development started over {yearsOfExperience}
+              &nbsp; years ago, and I've worked on various projects ranging from
+              e-commerce platforms to complex web applications. I'm constantly
+              learning new technologies and methodologies to improve my craft.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
