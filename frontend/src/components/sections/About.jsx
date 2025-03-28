@@ -166,7 +166,7 @@ const About = () => {
               />
 
               <img
-                src="/about-image.jpg"
+                src="https://res.cloudinary.com/dgvdlyxhw/image/upload/v1743191578/amari-james-bzdfrbaGztY-unsplash_th1wxr.jpg"
                 alt="Profile"
                 className="w-full h-full object-cover rounded-xl relative z-10 shadow-xl"
               />

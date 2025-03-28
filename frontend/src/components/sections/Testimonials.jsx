@@ -5,62 +5,97 @@ import { FaQuoteLeft, FaStar } from "react-icons/fa";
 const Testimonials = () => {
   const containerRef = useRef(null);
 
-  // Testimonial data with duplicates for seamless looping
   const testimonials = [
     {
       id: 1,
-      name: "Alex Johnson",
-      position: "CTO, Tech Innovations",
+      name: "David Carter",
+      position: "Owner, Carter Web Studio",
       image: "/testimonial1.jpg",
       quote:
-        "One of the most talented developers I've worked with. Their attention to detail and problem-solving skills are exceptional.",
+        "Delivered a highly professional website ahead of schedule. Communication was smooth, and the attention to detail was top-notch. Will definitely work again.",
       rating: 5,
     },
     {
       id: 2,
-      name: "Sarah Williams",
-      position: "Product Manager, Digital Solutions",
+      name: "Lisa Gomez",
+      position: "Founder, FitPulse App",
       image: "/testimonial2.jpg",
       quote:
-        "Working with them was a game-changer for our project. They provided valuable insights that improved the overall user experience.",
+        "Turned our app idea into a fully functional and beautifully designed product. Truly a reliable and skilled developer who exceeded our expectations.",
       rating: 5,
     },
     {
       id: 3,
-      name: "Michael Chen",
-      position: "Founder, StartUp Inc.",
+      name: "Mark Robinson",
+      position: "Marketing Manager, Luxe Clothing",
       image: "/testimonial3.jpg",
       quote:
-        "They took our vague idea and turned it into a beautiful, functional product. Their technical expertise created an application our users love.",
+        "Revamped our e-commerce platform flawlessly. The new design and performance improvements significantly boosted our sales.",
       rating: 4,
     },
     {
       id: 4,
-      name: "Emily Rodriguez",
-      position: "Lead Designer, Creative Agency",
+      name: "Emily Silva",
+      position: "Project Manager, FarmCart Sri Lanka",
       image: "/testimonial4.jpg",
       quote:
-        "As a designer, I appreciate developers who can bring designs to life exactly as envisioned. They did that and more with subtle improvements.",
+        "Very satisfied with the work. Great understanding of client needs, and always willing to go the extra mile. Highly recommend for any web or app project.",
       rating: 5,
     },
     // Duplicates for seamless loop
     {
       id: 5,
-      name: "Alex Johnson",
-      position: "CTO, Tech Innovations",
+      name: "David Carter",
+      position: "Owner, Carter Web Studio",
       image: "/testimonial1.jpg",
       quote:
-        "One of the most talented developers I've worked with. Their attention to detail and problem-solving skills are exceptional.",
+        "Delivered a highly professional website ahead of schedule. Communication was smooth, and the attention to detail was top-notch. Will definitely work again.",
       rating: 5,
     },
     {
       id: 6,
-      name: "Sarah Williams",
-      position: "Product Manager, Digital Solutions",
+      name: "Lisa Gomez",
+      position: "Founder, FitPulse App",
       image: "/testimonial2.jpg",
       quote:
-        "Working with them was a game-changer for our project. They provided valuable insights that improved the overall user experience.",
+        "Turned our app idea into a fully functional and beautifully designed product. Truly a reliable and skilled developer who exceeded our expectations.",
+      rating: 5,
+    },
+    {
+      id: 1,
+      name: "Oliver Bennett",
+      position: "Founder, GreenTech UK",
+      image: "/testimonial1.jpg",
+      quote:
+        "Handled our platform development flawlessly. Always responsive and ready to suggest innovative solutions. Highly recommended for international teams.",
+      rating: 5,
+    },
+    {
+      id: 2,
+      name: "Sophie Tanaka",
+      position: "UI/UX Lead, Sakura Digital (Japan)",
+      image: "/testimonial2.jpg",
+      quote:
+        "Exceptional frontend work with strong attention to localization and user experience. Smooth communication throughout the project.",
+      rating: 5,
+    },
+    {
+      id: 3,
+      name: "Carlos Mendes",
+      position: "Owner, Mendes Fashion (Portugal)",
+      image: "/testimonial3.jpg",
+      quote:
+        "Brought our online store to life with clean code and a stylish UI. Sales increased significantly after the launch. Very reliable freelancer.",
       rating: 4,
+    },
+    {
+      id: 4,
+      name: "Ava Mitchell",
+      position: "Marketing Manager, Wanderlust Travel",
+      image: "/testimonial4.jpg",
+      quote:
+        "Delivered a beautiful, fast-loading travel blog platform. The project was completed ahead of time without compromising quality.",
+      rating: 5,
     },
   ];
 
